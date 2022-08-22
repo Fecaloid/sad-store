@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.catalog.models import Category, Product
+from apps.catalog.models import Category, Product, Image
 
 
 @admin.register(Category)
@@ -12,7 +12,14 @@ class ProductCategoryInline(admin.TabularInline):
     extra = 1
 
 
+class ImageInline(admin.TabularInline):
+    model = Image
+    fields = ['product', 'image_tag', 'image', 'is_main']
+    readonly_fields = ['image_tag']
+    extra = 1
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     fields = ['name', 'description', 'quantity', 'price']
-    inlines = [ProductCategoryInline]
+    inlines = [ProductCategoryInline, ImageInline]
