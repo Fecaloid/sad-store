@@ -9,7 +9,8 @@ def blog_category_list(request):
 
 def article_list(request, category_id):
     articles = Article.objects.filter(category=category_id)
-    return render(request, 'blog/article/list.html', {'articles': articles})
+    category = BlogCategory.objects.get(id=category_id)
+    return render(request, 'blog/article/list.html', {'articles': articles, 'category': category})
 
 
 def article_view(request, category_id, article_id):
