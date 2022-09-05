@@ -3,6 +3,7 @@ Django==4.0.6
 django-appconf==1.0.5
 django-imagekit==4.1.0
 django-js-asset==2.0.0
+django-mathfilters==1.0.0
 django-mptt==0.13.4
 django-phonenumber-field==6.3.0
 django-treebeard==4.5.1

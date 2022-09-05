@@ -38,11 +38,13 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
     'mptt',
+    'mathfilters',
 
     'apps.main',
     'apps.blog',
     'apps.user',
-    'apps.catalog'
+    'apps.catalog',
+    'apps.order',
 ]
 
 MIDDLEWARE = [
