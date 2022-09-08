@@ -36,9 +36,12 @@
                 <br>
                 <p class="text-danger text-end">Довольно грустно, но что-то найдется...</p>
                 {% if request.user.is_authenticated %}
-                    <p class="text-end">Привет {{ request.user.username}} (<a href="{% url 'logout' %}">Выйти</a>)</p>
+                    <p class="text-end">Привет {{ request.user.username }} (<a href="{% url 'logout' %}">Выйти</a>)</p>
                 {% else %}
-                    <p class="text-end"><a href="{% url 'login' %}?next={% if request.GET.next %}{{ request.GET.next }}{% else %}{{ request.path }}{% endif %}">Войти</a> или <a href="{% url 'register' %}?next={{ request.path }}">Зарегистрироваться</a></p>
+                    <p class="text-end">
+                        <a href="{% url 'login' %}?next={% if request.GET.next %}{{ request.GET.next }}{% else %}{{ request.path }}{% endif %}">Войти</a>
+                        или <a href="{% url 'register' %}?next={{ request.path }}">Зарегистрироваться</a>
+                    </p>
                 {% endif %}
             </div>
         </div>
@@ -93,6 +96,21 @@
     {% block content %}
     {% endblock %}
 </div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <br>
+                <hr>
+            </div>
+            <div class="col">
+                <p class="text-center text-info">Все права защищены, правда неизвестно кем)</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
