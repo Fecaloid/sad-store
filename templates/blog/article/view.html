@@ -10,7 +10,7 @@
     {% if article.image %}
         <img class="img-thumbnail" src="{{ article.image.url }}" alt="">
     {% endif %}
-    <p>{{ article.text }}</p>
+    <p>{{ article.text|safe }}</p>
     <p>
         {% for tag in article.tags.all %}
             <a href="{% url 'tag_search_article_list' tag_id=tag.id %}">#{{ tag.name }}</a>
