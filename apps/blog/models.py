@@ -6,6 +6,7 @@ from pilkit.processors import ResizeToFill
 from apps.main.mixins import MetaTagMixin
 from apps.user.models import User
 from config.settings import MEDIA_ROOT
+from tinymce.models import HTMLField
 
 
 class BlogCategory(MetaTagMixin):
@@ -83,7 +84,7 @@ class Article(MetaTagMixin):
     )
     title = models.CharField(verbose_name='Заголовок', max_length=255)
     text_preview = models.TextField(verbose_name='Текст-превью')
-    text = models.TextField(verbose_name='Текст')
+    text = HTMLField(verbose_name='Текст')
     created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='Дата редактирования', auto_now=True)
 

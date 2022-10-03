@@ -27,4 +27,6 @@ urlpatterns = [
     path('user/', include('apps.user.urls')),
     path('order/', include('apps.order.urls')),
     path('api/', include('apps.api.urls')),
+    path('tinymce/', include('tinymce.urls')),
+    path('', include('apps.main.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
