@@ -4,4 +4,8 @@
 {% endblock %}
 {% block content %}
     <h1>Приветствую тебя на главной странице</h1>
+    {% for product_set in product_sets %}
+        {% include 'main/_product_set.html' %}
+    {% endfor %}
+
 {% endblock %}
