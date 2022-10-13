@@ -1,0 +1,9 @@
+{% if comments %}
+    <h3 class="text-center">Коментарии</h3>
+    {% for comment in comments %}
+        <p><b>{{ comment.name }}</b></p>
+        <blockquote>{{ comment.text }}</blockquote>
+        <p class="text-end"><i>{{ comment.created_at }}</i></p>
+        <hr>
+    {% endfor %}
+{% endif %}
