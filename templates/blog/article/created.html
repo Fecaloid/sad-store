@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block breadcrumbs %}
+    {% include '_breadcrumbs.html' %}
+{% endblock %}
+
+{% block content %}
+    <h3 class="my-header">Спасибо! Ваш комментарий добавлен</h3>
+    <p>В ближайшее время он пройдет модерацию</p>
+    <p class="text-center">
+        <a href="{% url 'article_view' category_id=article.category.id article_id=article.id %}" class="btn btn-success">Назад</a>
+    </p>
+{% endblock %}
