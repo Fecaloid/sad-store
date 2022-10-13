@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.main.models import Page, ProductSet
+from apps.main.models import Page, ProductSet, GlobalSetting
 from adminsortable2.admin import SortableAdminMixin
 
 
@@ -27,3 +27,13 @@ class ProductSetAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display_links = ['id', 'name']
     inlines = [ProductSetProductsInline]
     fields = ['name', 'is_active']
+
+
+@admin.register(GlobalSetting)
+class GlobalSettingAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
