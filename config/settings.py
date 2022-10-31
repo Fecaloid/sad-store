@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sad_store_db',
-        'USER': 'sad_store_db_user',
-        'PASSWORD': '7',
-        'HOST': 'localhost',
+        'NAME': 'daceb4kcnj6ev1',
+        'USER': 'adrhkzroskquui',
+        'PASSWORD': '297381744525448c50b9fefa23e3f27cddf02a9e873fa417f562fb0df8073238',
+        'HOST': 'ec2-54-170-90-26.eu-west-1.compute.amazonaws.com',
         'PORT': 5432
     }
 }
